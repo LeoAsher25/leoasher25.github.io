@@ -1,0 +1,121 @@
+@import "./variable";
+
+.product-item {
+  border-radius: 1rem;
+  transition: 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  .ava {
+  }
+
+  .content {
+    font-size: 1.5rem;
+    // padding: 1rem 2rem;
+
+    .desc {
+      * {
+        display: block;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+
+      .title {
+      }
+      .price {
+        font-weight: 700;
+        margin: 0.5rem auto 1rem;
+      }
+    }
+    //end of desc
+    .buy-cart-wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.2rem;
+      margin: 0.5rem auto 1rem;
+
+      border-radius: 0.5rem;
+      text-align: center;
+      background-color: $primary-color1;
+
+      & > div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        color: #fefefe;
+        border-radius: 0.5rem;
+        padding: 0.6rem 0;
+        overflow: hidden;
+
+        cursor: pointer;
+
+        .button-hover {
+          position: absolute;
+          top: 0;
+          transition: 0.5s;
+          transform: translateX(-101%);
+
+          border-radius: 0.5rem;
+          width: 100%;
+          height: 100%;
+          background-color: $primary-color;
+        }
+
+        @keyframes buttonOnHover {
+          from {
+            transform: translateX(-101%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes buttonOnBlur {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(101%);
+          }
+        }
+
+        i {
+          z-index: 2;
+          margin-right: 0.5rem;
+        }
+
+        span {
+          z-index: 2;
+          display: -webkit-inline-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+
+          background-color: unset;
+        }
+
+        transition: 0.5s;
+
+        &:hover {
+          color: #fefefe;
+        }
+      }
+
+      & > div + div {
+        margin-left: 0.2rem;
+        background-color: #fefefe;
+        color: #111;
+      }
+    }
+    // end of .buy-cart-wrap
+  }
+  // end of .content
+}
+// end of .product-item

@@ -1,0 +1,39 @@
+@import "./variable";
+
+.product-page {
+  .product-banner {
+    width: 100%;
+    background-color: red;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transition: transform 4s;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .page-title {
+    //   text-align: center;
+    //   font-size: 3.6rem;
+    margin-top: 3rem;
+
+    //   text-transform: uppercase;
+    //   font-weight: 700;
+    //   color: $blue-text-color;
+  }
+
+  .product-list {
+    .row {
+      .col-lg-3 {
+      }
+      // end of .col-lg-3
+    }
+    // end of .row
+  }
+  // end of .product-list
+}
