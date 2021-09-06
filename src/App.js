@@ -6,6 +6,7 @@ import ProductContextProvider from "./contexts/ProductContext";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import CartContextProvider from "./contexts/CartContextProvider";
 
 function App() {
   return (
@@ -13,24 +14,22 @@ function App() {
       <Router>
         <div className="app">
           <AuthContextProvider>
-            <TopNav />
+            <CartContextProvider>
+              <TopNav />
+
+              <Switch>
+                <Route path="/products">
+                  <ProductContextProvider>
+                    <ProductPage />
+                  </ProductContextProvider>
+                </Route>
+
+                <Route path="/">
+                  <HomePage />
+                </Route>
+              </Switch>
+            </CartContextProvider>
           </AuthContextProvider>
-
-          {/* <ProductContextProvider>
-            <ProductPage />
-          </ProductContextProvider> */}
-
-          <Switch>
-            <Route path="/products">
-              <ProductContextProvider>
-                <ProductPage />
-              </ProductContextProvider>
-            </Route>
-
-            <Route path="/">
-              <HomePage />
-            </Route>
-          </Switch>
         </div>
       </Router>
     </ThemeContextProvider>

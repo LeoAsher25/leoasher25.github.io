@@ -179,6 +179,9 @@
       & > div {
         cursor: pointer;
         margin: auto 1rem;
+        label {
+          cursor: pointer;
+        }
         i {
           font-size: 2rem;
         }
@@ -301,19 +304,57 @@
       .top-nav__cart {
         position: relative;
 
-        span {
-          position: absolute;
-          right: 0;
-          top: 0;
-          transform: translate(60%, -25%);
+        .top-nav-cart-wrap {
+          transform: scale(0);
+          transform-origin: top right;
+          transition-duration: 0.5s;
+        }
 
-          width: 2rem;
-          height: 2rem;
-          line-height: 2.15rem;
-          border-radius: 50%;
+        & > label {
+          position: relative;
 
-          color: white;
-          background-color: rgb(240, 58, 58);
+          .bi-x-lg {
+            display: none;
+          }
+
+          .top-nav-cart-icon {
+            position: relative;
+
+            i {
+              display: block;
+              transform: scale(1.15);
+            }
+
+            span {
+              position: absolute;
+              right: 0;
+              top: 0;
+              transform: translate(70%, -40%);
+
+              width: 2.5rem;
+              height: 2.5rem;
+              line-height: 2.15rem;
+              border-radius: 50%;
+
+              font-size: 1.2rem;
+              font-weight: 700;
+              color: white;
+              background-color: $primary-color;
+            }
+          }
+        }
+
+        & > input[type="checkbox"]:checked ~ label {
+          .bi-x-lg {
+            display: block;
+          }
+          .top-nav-cart-icon {
+            display: none;
+          }
+        }
+
+        & > input[type="checkbox"]:checked ~ .top-nav-cart-wrap {
+          transform: scale(1);
         }
       }
       // ennd of top nav cart

@@ -3,14 +3,22 @@ import PropTypes from "prop-types";
 import { ThemeContext } from "../contexts/ThemeContext";
 import "../scss/ProductItem.scss";
 
+import { CartContext } from "../contexts/CartContextProvider";
+import { ADD_PRODUCT } from "../reducers/types";
+
 const ProductItem = (props) => {
   const { product } = props;
   const productUrlImg = `url('${product.image}')`;
 
+  //theme context
   const { theme } = useContext(ThemeContext);
   const { isLightTheme, lightTheme, darkTheme } = theme;
   const style = isLightTheme ? lightTheme : darkTheme;
 
+  //cart context
+  const { dispatch } = useContext(CartContext);
+
+  // handle adding box-shadow when hover product-item
   useEffect(() => {
     const productItemEleList = Array.from(
       document.querySelectorAll(".product-item")
@@ -26,6 +34,7 @@ const ProductItem = (props) => {
     });
   });
 
+  // handle adding animmation(background-color) when hover button of product-item
   useEffect(() => {
     const buttonWrapList = Array.from(
       document.querySelectorAll(".button-wrap")
@@ -42,6 +51,16 @@ const ProductItem = (props) => {
       };
     });
   }, []);
+
+  // handle add to cart click
+  function handleAddToCartClick(product) {
+    dispatch({
+      type: ADD_PRODUCT,
+      payload: {
+        product,
+      },
+    });
+  }
 
   return (
     <div
@@ -70,7 +89,10 @@ const ProductItem = (props) => {
             <span>Buy now</span>
           </div>
 
-          <div className="cart button-wrap">
+          <div
+            className="cart button-wrap"
+            onClick={() => handleAddToCartClick(product)}
+          >
             <div className="button-hover"></div>
             <i className="bi bi-cart3"></i>
             <span className=" d-none d-xl-block">Add to Cart</span>

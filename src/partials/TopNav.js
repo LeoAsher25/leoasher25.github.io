@@ -3,17 +3,23 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import TopNavRps from "./TopNavRps";
+import TopNavCart from "../components/TopNavCart";
 
 import { TOGGLE_THEME } from "../reducers/types";
 import AuthForm from "./AuthForm";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { AuthContext } from "../contexts/AuthContext";
 import "../scss/TopNav.scss";
+import { CartContext } from "../contexts/CartContextProvider";
 
 const TopNav = () => {
+  // theme context
   const { theme, Themedispatch } = useContext(ThemeContext);
   const { isLightTheme, lightTheme, darkTheme } = theme;
   const style = isLightTheme ? lightTheme : darkTheme;
+
+  //cart context
+  const { cart } = useContext(CartContext);
 
   const { isAuthenticated, AuthDispatch } = useContext(AuthContext);
 
@@ -264,8 +270,23 @@ const TopNav = () => {
             </div>
           </div>
           <div className="top-nav__cart ">
-            <i className="bi bi-cart3"></i>
-            <span>99</span>
+            <input
+              type="checkbox"
+              name="top-nav-cart-checkbox"
+              id="top-nav-cart-checkbox"
+              hidden
+            />
+            <label htmlFor="top-nav-cart-checkbox" className="">
+              <div className="top-nav-cart-icon">
+                <i className="bi bi-cart3"></i>
+                <span style={{ border: `2px solid ${style.backgroundColor}` }}>
+                  {cart.length}
+                </span>
+              </div>
+              <i className="bi bi-x-lg"></i>
+            </label>
+
+            <TopNavCart />
           </div>
         </div>
       </Container>
