@@ -1,25 +1,12 @@
 import React, { useEffect, useReducer } from "react";
 import { themeReducer } from "../reducers/ThemeReducer";
 import { GET_THEME, SAVE_THEME } from "../reducers/types";
+import { _themeDatas } from "./_data";
 
 export const ThemeContext = React.createContext();
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, Themedispatch] = useReducer(themeReducer, {
-    isLightTheme: true,
-    lightTheme: {
-      backgroundColor: "#fefefe",
-      color: "black",
-      boxShadowColor: "rgba(0, 0, 0, 0.2)",
-      boxShadowColor1: "rgba(0, 0, 0, 0.3)",
-    },
-    darkTheme: {
-      backgroundColor: "#222",
-      color: "#eee",
-      boxShadowColor: "rgba(0, 0, 0, 0.4)",
-      boxShadowColor1: "rgba(0, 0, 0, 0.6)",
-    },
-  });
+  const [theme, Themedispatch] = useReducer(themeReducer, _themeDatas);
   useEffect(() => {
     Themedispatch({
       type: GET_THEME,

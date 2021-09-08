@@ -1,12 +1,20 @@
-import TopNav from "./partials/TopNav";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// import context
 import AuthContextProvider from "./contexts/AuthContext";
 import ThemeContextProvider from "./contexts/ThemeContext";
-import ProductPage from "./pages/ProductPage";
 import ProductContextProvider from "./contexts/ProductContext";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
 import CartContextProvider from "./contexts/CartContextProvider";
+
+//import pages;
+import CartPage from './pages/CartPage';
+import HomePage from "./pages/HomePage/index";
+import ProductPage from "./pages/ProductPage/index";
+
+// import partials
+import TopNav from "./partials/TopNav/index";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./partials/Footer";
 
 function App() {
   return (
@@ -17,6 +25,8 @@ function App() {
             <CartContextProvider>
               <TopNav />
 
+              <ScrollToTop />
+
               <Switch>
                 <Route path="/products">
                   <ProductContextProvider>
@@ -24,10 +34,16 @@ function App() {
                   </ProductContextProvider>
                 </Route>
 
+                <Route path="/cart">
+                  <CartPage />
+                </Route>
+
                 <Route path="/">
                   <HomePage />
                 </Route>
               </Switch>
+
+              <Footer />
             </CartContextProvider>
           </AuthContextProvider>
         </div>

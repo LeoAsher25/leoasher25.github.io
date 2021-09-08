@@ -1,0 +1,128 @@
+@import "../../scss/variable";
+
+.top-nav-cart-wrap {
+  position: absolute;
+  top: 150%;
+  right: -0.5rem;
+  width: 40rem;
+
+  max-width: 90vw;
+  cursor: default;
+
+  @media (max-width: 400px) {
+    & {
+      right: -3rem;
+      max-width: 100vw;
+    }
+  }
+
+  border-radius: 5px;
+  overflow: hidden;
+
+  .cart-wrap__header {
+    padding: 2rem 2rem;
+
+    .cart-wrap__header-item {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: left;
+
+      &:last-child {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  // end of .cart-wrap__header
+
+  .top-nav-cart-btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    max-width: 80%;
+    padding: ////////
+      0.2rem;
+    margin: 2.5rem auto;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+
+    background-color: $primary-color1;
+
+    & > .button-wrap {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      color: #fefefe;
+      border-radius: 0.5rem;
+      padding: 0.6rem 0;
+      overflow: hidden;
+
+      cursor: pointer;
+      text-decoration: none;
+
+      .button-hover {
+        position: absolute;
+        top: 0;
+        transition: 0.5s;
+        transform: translateX(-101%);
+
+        border-radius: 0.5rem;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+      }
+
+      @keyframes buttonOnHover {
+        from {
+          transform: translateX(-101%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes buttonOnBlur {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(101%);
+        }
+      }
+
+      i {
+        z-index: $top-nav-cart-zindex;
+        margin-right: 0.5rem;
+      }
+
+      span {
+        z-index: $top-nav-cart-zindex;
+        display: -webkit-inline-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+
+        background-color: unset;
+      }
+
+      transition: 0.5s;
+
+      &:hover {
+        color: #fefefe;
+      }
+    }
+
+    & > .button-wrap + .button-wrap {
+      margin-left: 0.2rem;
+      background-color: #fefefe;
+      color: #111;
+    }
+  }
+  // end of .top-nav-cart-btn-wrap
+}
+// end of .cart-wrap

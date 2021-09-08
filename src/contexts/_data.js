@@ -572,11 +572,27 @@ export const _cart = [
   //   price: 390000,
   //   quantityInCart: 4,
   //   desciption: `Mèo Quạo phiên bản chị ong nâu nâu đang làm mưa làm gió tại nhà Mi.
-
   //   Nhìn mặt thì quạo chút xíu thui nhưng ôm hay tựa lưng đều thoải mái lắm lun nhen. Em này mà mang đi tặng thì Mi đảm bảo là nửa kia sẽ ưng ngay từ cái nhìn đầu tiên luôn nè. `,
   //   size: ["35cm", "35cm", "55cm"],
   //   material: "Nỉ và bông gòn cao cấp.",
   //   other: {},
   // },
-  
 ];
+
+export const _themeDatas = {
+  isLightTheme: true,
+  lightTheme: {
+    backgroundColor: "#fefefe",
+    color: "black",
+    colorBlur: '#444',
+    boxShadowColor: "rgba(0, 0, 0, 0.2)",
+    boxShadowColor1: "rgba(0, 0, 0, 0.3)",
+  },
+  darkTheme: {
+    backgroundColor: "#222",
+    color: "#eee",
+    colorBlur: '#bbb',
+    boxShadowColor: "rgba(0, 0, 0, 0.4)",
+    boxShadowColor1: "rgba(0, 0, 0, 0.6)",
+  },
+};

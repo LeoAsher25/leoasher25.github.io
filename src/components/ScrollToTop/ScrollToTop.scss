@@ -1,0 +1,30 @@
+@import "../../scss//variable";
+
+.scroll-to-top {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2.2rem;
+
+  position: fixed;
+  bottom: 5rem;
+  right: 4rem;
+  z-index: $scroll-to-top-zindex;
+
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  color: #fff;
+  background-color: $primary-color;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+
+  transition: 0.5s;
+  transform: translateY(5rem);
+  opacity: 0;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
