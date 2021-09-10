@@ -1,4 +1,4 @@
-import { GET_CART, SAVE_CART, ADD_PRODUCT, REMOVE_PRODUCT } from "./types";
+import { GET_CART, SAVE_CART, ADD_PRODUCT, REMOVE_PRODUCT, DELETE_PRODUCT } from "./types";
 
 export const cartReducer = (state, action) => {
   const { type, payload } = action;
@@ -52,6 +52,11 @@ export const cartReducer = (state, action) => {
         state = [...tmpState];
         console.log("subtract", tmpState[indexRemovedProduct].quantityInCart);
       }
+      return state;
+
+    case DELETE_PRODUCT: 
+      let newCart = state.filter(product => product.id !== payload.id)
+      state = [...newCart]
       return state;
 
     default:

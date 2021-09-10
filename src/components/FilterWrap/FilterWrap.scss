@@ -106,13 +106,26 @@
               display: flex;
               align-items: center;
 
-              span,
-              label {
+              .filter-item-label {
                 margin-left: 0.5rem;
+                user-select: none;
+                cursor: pointer;
+
+                i {
+                  visibility: hidden;
+                }
               }
 
-              &:hover {
-                cursor: pointer;
+              input[type="checkbox"]:checked ~ .filter-item-label,
+              input[type="radio"]:checked ~ .filter-item-label {
+                color: $primary-color;
+
+                i {
+                  visibility: hidden;
+                }
+              }
+
+              span:hover {
                 color: $primary-color;
               }
             }
@@ -121,19 +134,6 @@
             transform-origin: top;
             transform: scaleY(0);
             opacity: 0;
-
-            .filter-sort-item {
-              i {
-                visibility: hidden;
-              }
-
-              &.active {
-                color: $primary-color;
-                i {
-                  visibility: visible;
-                }
-              }
-            }
           }
           // end of filter content
 

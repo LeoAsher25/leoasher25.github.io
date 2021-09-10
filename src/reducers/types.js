@@ -10,8 +10,8 @@ export  const  GET_AUTH = 'GET_AUTH';
 export  const  SAVE_AUTH = 'SAVE_AUTH';
 
 // for cart context
-
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const GET_CART = "GET_CART";
 export const SAVE_CART = "SAVE_CART";

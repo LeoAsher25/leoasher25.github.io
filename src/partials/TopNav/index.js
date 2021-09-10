@@ -199,15 +199,12 @@ const TopNav = () => {
           <li className="top-nav-item">
             <a href="/">Gift Station</a>
           </li>
-
-          {/* <li className="top-nav-item">
-            <a href="/">Meow's Story</a>
-          </li> */}
         </ul>
 
         <div className="top-nav__user-wrap">
           <div className="top-nav__search">
             <input type="checkbox" name="" id="search-checkbox" hidden />
+            <label htmlFor="search-checkbox" className="nav-overlay "></label>
             <label htmlFor="search-checkbox">
               <i className="bi bi-search"></i>
               <i className="bi bi-x-lg"></i>
@@ -240,7 +237,8 @@ const TopNav = () => {
           </div>
           <div className="top-nav__user d-none d-lg-flex ">
             <input type="checkbox" name="" id="user-checkbox" hidden />
-            <label htmlFor="user-checkbox">
+            <label htmlFor="user-checkbox" className="nav-overlay "></label>
+            <label htmlFor="user-checkbox" className="top-nav__user-label">
               {isAuthenticated ? (
                 <i className="bi bi-person-check"></i>
               ) : (
@@ -250,7 +248,10 @@ const TopNav = () => {
             </label>
             <div
               className="user-wrap"
-              style={{ boxShadow: `0px 0px 10px ${style.boxShadowColor}` }}
+              style={{
+                boxShadow: `0px 0px 10px ${style.boxShadowColor}`,
+                backgroundColor: style.backgroundColor,
+              }}
             >
               {!isAuthenticated ? (
                 <button
@@ -276,7 +277,14 @@ const TopNav = () => {
               id="top-nav-cart-checkbox"
               hidden
             />
-            <label htmlFor="top-nav-cart-checkbox" className="">
+            <label
+              htmlFor="top-nav-cart-checkbox"
+              className="nav-overlay "
+            ></label>
+            <label
+              htmlFor="top-nav-cart-checkbox"
+              className="top-nav__cart-icon"
+            >
               <div className="top-nav-cart-icon">
                 <i className="bi bi-cart3"></i>
                 <span style={{ border: `2px solid ${style.backgroundColor}` }}>

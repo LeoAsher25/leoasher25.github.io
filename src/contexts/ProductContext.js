@@ -11,10 +11,10 @@ const ProductContextProvider = ({ children }) => {
     setProducts(...products, product);
   };
 
-  console.log("products:1 ", products);
 
   const productDatas = {
     products,
+    setProducts,
     addProduct,
   };
 

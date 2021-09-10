@@ -1,8 +1,61 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./FilterWrap.scss";
 
-const FilterWrap = () => {
+const FilterWrap = (props) => {
+  const { filterPrice, setFilterPrice, filterSort, setFilterSort } = props;
+
+  const filterPriceRef = useRef([]);
+  const filterSortRef = useRef([]);
+
+  const checkAll = () => {
+    if (
+      filterPrice.some(
+        (item, index) => index !== 0 && item.checked === true
+      ) === false
+    ) {
+      filterPrice[0].checked = true;
+    }
+  };
+
+  const handleCheckboxChecked = (e, index) => {
+    if (index !== 0) {
+      // console.log(
+      //   "test check 23",
+      //   filterPrice.some((item, index) => {
+      //     if (index !== 0 && item.checked === true) console.log("ok", item);
+      //     return index !== 0 && item.checked === true;
+      //   })
+      // );
+      // console.log("test 1", filterPrice[index]);
+      filterPrice[0].checked = false;
+      filterPriceRef.current[0].checked = false;
+    } else {
+      filterPrice.forEach((item) => {
+        item.checked = false;
+      });
+      filterPriceRef.current.forEach((item) => {
+        item.checked = false;
+      });
+      filterPriceRef.current[0].checked = true;
+      filterPrice[0].checked = true;
+    }
+    let tmpFilterPrice = [...filterPrice];
+    tmpFilterPrice[index].checked = e.target.checked;
+    setFilterPrice([...tmpFilterPrice]);
+
+    return checkAll();
+  };
+
+  const handleRadioChecked = (e, index) => {
+    filterSort.forEach((item) => {
+      item.checked = false;
+    });
+    let tmpFilterSort = [...filterSort];
+    tmpFilterSort[index].checked = e.target.checked;
+    setFilterSort([...tmpFilterSort]);
+  };
+
   return (
     <div className="filter-wrap">
       <div className="filter-content">
@@ -25,56 +78,30 @@ const FilterWrap = () => {
                     </div>
 
                     <div className="filter-price-content  filter-content">
-                      <div className="filter-price-item filter-item">
-                        <input
-                          type="radio"
-                          name="filterPrice"
-                          id="filter-price-1"
-                        />
-                        <label htmlFor="filter-price-1">Dưới 100.000đ</label>
-                      </div>
+                      {filterPrice.map((item, index) => (
+                        <div
+                          key={index}
+                          className="filter-price-item filter-item"
+                        >
+                          <input
+                            ref={(eleRef) =>
+                              (filterPriceRef.current[index] = eleRef)
+                            }
+                            type="checkbox"
+                            name="filterPrice"
+                            id={`filter-price-checkbox-${index}`}
+                            value={item.value}
+                            onChange={(e) => handleCheckboxChecked(e, index)}
+                          />
 
-                      <div className="filter-price-item filter-item">
-                        <input
-                          type="radio"
-                          name="filterPrice"
-                          id="filter-price-2"
-                        />
-                        <label htmlFor="filter-price-2">
-                          100.000đ - 300.000đ
-                        </label>
-                      </div>
-
-                      <div className="filter-price-item filter-item">
-                        <input
-                          type="radio"
-                          name="filterPrice"
-                          id="filter-price-3"
-                        />
-                        <label htmlFor="filter-price-3">
-                          300.000đ - 500.000đ
-                        </label>
-                      </div>
-
-                      <div className="filter-price-item filter-item">
-                        <input
-                          type="radio"
-                          name="filterPrice"
-                          id="filter-price-4"
-                        />
-                        <label htmlFor="filter-price-4">
-                          500.000đ - 1.000.000đ
-                        </label>
-                      </div>
-
-                      <div className="filter-price-item filter-item">
-                        <input
-                          type="radio"
-                          name="filterPrice"
-                          id="filter-price-5"
-                        />
-                        <label htmlFor="filter-price-5">Trên 1.000.000đ</label>
-                      </div>
+                          <label
+                            className="filter-item-label"
+                            htmlFor={`filter-price-checkbox-${index}`}
+                          >
+                            <span>{item.title}</span>
+                          </label>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   {/* end of filter-price  */}
@@ -88,40 +115,29 @@ const FilterWrap = () => {
                     </div>
 
                     <div className="filter-sort-content filter-content">
-                      <div className="filter-sort-item filter-item active">
-                        <i className="fas fa-check"></i>
-                        <span>Giá: Tăng dần</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Giá: Giảm dần</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Tên: A-Z</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Tên: Z-A</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Cũ nhất</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Mới nhất</span>
-                      </div>
-
-                      <div className="filter-sort-item filter-item">
-                        <i className="fas fa-check"></i>
-                        <span>Bán chạy nhất</span>
-                      </div>
+                      {filterSort.map((item, index) => (
+                        <div
+                          key={index}
+                          className="filter-sort-item filter-item"
+                        >
+                          <input
+                            ref={(eleRef) =>
+                              (filterSortRef.current[index] = eleRef)
+                            }
+                            type="radio"
+                            name="filterSort"
+                            value={item.value}
+                            id={`filter-sort-checkbox-${index}`}
+                            onChange={(e) => handleRadioChecked(e, index)}
+                          />
+                          <label
+                            className="filter-item-label"
+                            htmlFor={`filter-sort-checkbox-${index}`}
+                          >
+                            <span>{item.title}</span>
+                          </label>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   {/* end of filter-sort  */}

@@ -41,6 +41,15 @@ const CartPage = () => {
     return priceStr;
   };
 
+  const handleButtonDown = (e) => {
+    e.target.style.boxShadow = "inset 3px 3px 3px rgba(0, 0, 0, .2)";
+    e.target.style.transform = "translateY(2px)";
+  };
+
+  const handleButtonUp = (e) => {
+    e.target.style.boxShadow = "2px 3px 0 rgba(0, 0, 0, .2)";
+    e.target.style.transform = "translateY(0)";
+  };
   return (
     <div
       className="cart-page"
@@ -82,7 +91,13 @@ const CartPage = () => {
                 </li>
               </ul>
 
-              <button className="pay-btn">Thanh toán</button>
+              <button
+                className="pay-btn"
+                onMouseDown={(e) => handleButtonDown(e)}
+                onMouseUp={(e) => handleButtonUp(e)}
+              >
+                Thanh toán
+              </button>
             </div>
           </Col>
         </Row>

@@ -46,7 +46,7 @@ export const productList = [
     id: 4,
     image: "./img/productlList/0.png",
     title: "Đèn ngủ cảm ứng hình Mây AmiCute Đèn ngủ cảm ứng hình Mây AmiCute",
-    price: 340000,
+    price: 420000,
     quantity: 10,
     desciption:
       "Ngoài công dụng chính là chiếc đèn bảo vệ giấc ngủ của bạn mỗi tối, AmiCute còn có công dụng phụ là để decor phòng thêm lung linh hơn và giúp bạn giảm stress bằng cách đấm bóp thoải mái chiếc mây này nhen.",
@@ -60,7 +60,7 @@ export const productList = [
     image: "./img/productlList/4.png",
     title:
       "Mèo Quạo Phiên Bản Chị Ong Nâu Nâu Mèo Quạo Phiên Bản Chị Ong Nâu Nâu",
-    price: 390000,
+    price: 510000,
     quantity: 50,
     desciption: `Mèo Quạo phiên bản chị ong nâu nâu đang làm mưa làm gió tại nhà Mi.
 
@@ -73,7 +73,7 @@ export const productList = [
     id: 6,
     image: "./img/productlList/5.png",
     title: "Mèo phi hành gia SpaceX Mèo phi hành gia SpaceX",
-    price: 360000,
+    price: 600000,
     quantity: 20,
     desciption: `Ngoài công dụng chính làm đèn ngủ thì em mèo phi hành Space X còn là món đồ decor trang trí khiến căn phòng bạn hấp dẫn và thú vị hơn gấp nhìu lần. 
 
@@ -89,7 +89,7 @@ export const productList = [
     id: 7,
     image: "./img/productlList/0.png",
     title: "Đèn ngủ cảm ứng hình Mây AmiCute Đèn ngủ cảm ứng hình Mây AmiCute",
-    price: 340000,
+    price: 120000,
     quantity: 10,
     desciption:
       "Ngoài công dụng chính là chiếc đèn bảo vệ giấc ngủ của bạn mỗi tối, AmiCute còn có công dụng phụ là để decor phòng thêm lung linh hơn và giúp bạn giảm stress bằng cách đấm bóp thoải mái chiếc mây này nhen.",
@@ -103,7 +103,7 @@ export const productList = [
     image: "./img/productlList/4.png",
     title:
       "Mèo Quạo Phiên Bản Chị Ong Nâu Nâu Mèo Quạo Phiên Bản Chị Ong Nâu Nâu",
-    price: 390000,
+    price: 110000,
     quantity: 50,
     desciption: `Mèo Quạo phiên bản chị ong nâu nâu đang làm mưa làm gió tại nhà Mi.
 
@@ -116,7 +116,7 @@ export const productList = [
     id: 9,
     image: "./img/productlList/5.png",
     title: "Mèo phi hành gia SpaceX Mèo phi hành gia SpaceX",
-    price: 360000,
+    price: 50000,
     quantity: 20,
     desciption: `Ngoài công dụng chính làm đèn ngủ thì em mèo phi hành Space X còn là món đồ decor trang trí khiến căn phòng bạn hấp dẫn và thú vị hơn gấp nhìu lần. 
 
@@ -132,7 +132,7 @@ export const productList = [
     id: 10,
     image: "./img/productlList/0.png",
     title: "Đèn ngủ cảm ứng hình Mây AmiCute Đèn ngủ cảm ứng hình Mây AmiCute",
-    price: 340000,
+    price: 700000,
     quantity: 10,
     desciption:
       "Ngoài công dụng chính là chiếc đèn bảo vệ giấc ngủ của bạn mỗi tối, AmiCute còn có công dụng phụ là để decor phòng thêm lung linh hơn và giúp bạn giảm stress bằng cách đấm bóp thoải mái chiếc mây này nhen.",
@@ -146,7 +146,7 @@ export const productList = [
     image: "./img/productlList/4.png",
     title:
       "Mèo Quạo Phiên Bản Chị Ong Nâu Nâu Mèo Quạo Phiên Bản Chị Ong Nâu Nâu",
-    price: 390000,
+    price: 750000,
     quantity: 50,
     desciption: `Mèo Quạo phiên bản chị ong nâu nâu đang làm mưa làm gió tại nhà Mi.
 
@@ -159,7 +159,7 @@ export const productList = [
     id: 12,
     image: "./img/productlList/5.png",
     title: "Mèo phi hành gia SpaceX Mèo phi hành gia SpaceX",
-    price: 360000,
+    price: 750000,
     quantity: 20,
     desciption: `Ngoài công dụng chính làm đèn ngủ thì em mèo phi hành Space X còn là món đồ decor trang trí khiến căn phòng bạn hấp dẫn và thú vị hơn gấp nhìu lần. 
 
@@ -300,6 +300,7 @@ export const productList = [
       desciption: `Có 4 mức sáng khác nhau và thay đổi được nhiều màu.`,
     },
   },
+  
 ];
 
 export const _newestProducts = [

@@ -10,6 +10,11 @@
     text-align: center;
     color: $blue-text-color;
     padding: 4rem 0;
+
+    @media (max-width: 768px) {
+      font-size: 2.6rem;
+      padding: 3rem 0 0;
+    }
   }
   // end of .cart-page-heading
 
@@ -30,6 +35,7 @@
 
       .note {
         height: 10rem;
+        min-height: 10rem;
         width: 100%;
         padding: 1rem 2rem;
 
@@ -135,9 +141,10 @@
       border: none;
       margin: 1rem;
 
+      position: relative;
       color: #fff;
       background-color: $primary-color;
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.2);
     }
   }
   // end of .order-infor

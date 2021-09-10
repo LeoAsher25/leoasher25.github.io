@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContextProvider";
 
-import { ADD_PRODUCT, REMOVE_PRODUCT } from "../../reducers/types";
+import {
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  DELETE_PRODUCT,
+} from "../../reducers/types";
 
 import "./CartWrapList.scss";
 
@@ -29,6 +33,15 @@ const CartWrapList = () => {
   const formatPrice = (price) => {
     let priceStr = new Intl.NumberFormat("de-DE").format(price);
     return priceStr;
+  };
+
+  const handleRemoveProduct = (product) => {
+    dispatch({
+      type: DELETE_PRODUCT,
+      payload: {
+        id: product.id,
+      },
+    });
   };
 
   return (
@@ -59,6 +72,13 @@ const CartWrapList = () => {
                     </button>
                     <span>{product.quantityInCart}</span>
                     <button onClick={() => handlePlusClick(product)}>+</button>
+                  </div>
+
+                  <div
+                    className="cart-item-delete"
+                    onClick={() => handleRemoveProduct(product)}
+                  >
+                    <i className="bi bi-trash"></i>
                   </div>
                 </div>
                 <div className="total-price-of-product">

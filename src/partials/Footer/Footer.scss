@@ -25,6 +25,11 @@ footer.footer {
   }
 
   .container {
+    @media (max-width: 576px) {
+      & {
+        padding: 0rem 3rem;
+      }
+    }
     .row {
       .heading {
         font-size: 1.8rem;
@@ -95,11 +100,5 @@ footer.footer {
     // end of .row
   }
   // end of .container
-
-  @media (max-width: 576px) {
-    & {
-      padding: 3rem 3rem;
-    }
-  }
 }
 // end of footer.footer

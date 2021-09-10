@@ -11,7 +11,7 @@ import "./TopNavCart.scss";
 
 const TopNavCart = () => {
   //cart context
-  const { cart, dispatch } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   // theme context
   const { theme } = useContext(ThemeContext);
@@ -56,7 +56,10 @@ const TopNavCart = () => {
   return (
     <div
       className="top-nav-cart-wrap"
-      style={{ boxShadow: `5px 5px 15px ${style.boxShadowColor1}` }}
+      style={{
+        boxShadow: `5px 5px 15px ${style.boxShadowColor1}`,
+        backgroundColor: style.backgroundColor,
+      }}
     >
       <div className="cart-wrap__header">
         <div className="in-cart cart-wrap__header-item">
