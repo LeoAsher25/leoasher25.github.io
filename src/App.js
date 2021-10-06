@@ -7,7 +7,7 @@ import ProductContextProvider from "./contexts/ProductContext";
 import CartContextProvider from "./contexts/CartContextProvider";
 
 //import pages;
-import CartPage from './pages/CartPage';
+import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage/index";
 import ProductPage from "./pages/ProductPage/index";
 
@@ -15,6 +15,7 @@ import ProductPage from "./pages/ProductPage/index";
 import TopNav from "./partials/TopNav/index";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./partials/Footer";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
         <div className="app">
           <AuthContextProvider>
             <CartContextProvider>
-              <TopNav />
+              <ProductContextProvider>
+                <TopNav />
+              </ProductContextProvider>
 
               <ScrollToTop />
 
@@ -38,9 +41,14 @@ function App() {
                   <CartPage />
                 </Route>
 
+                <Route path="/product-detail-page">
+                  <ProductDetailPage />
+                </Route>
+
                 <Route path="/">
                   <HomePage />
                 </Route>
+
               </Switch>
 
               <Footer />

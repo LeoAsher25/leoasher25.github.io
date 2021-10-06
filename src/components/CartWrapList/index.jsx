@@ -22,12 +22,20 @@ const CartWrapList = () => {
   };
 
   const handleSubtract = (product) => {
-    dispatch({
-      type: REMOVE_PRODUCT,
-      payload: {
-        product,
-      },
-    });
+    let check = true;
+    if (product.quantityInCart === 1) {
+      check = window.confirm(
+        "Bạn có chắc muốn xóa sản phẩm khỏi giỏ hàng không?"
+      );
+    }
+    if (check) {
+      dispatch({
+        type: REMOVE_PRODUCT,
+        payload: {
+          product,
+        },
+      });
+    }
   };
 
   const formatPrice = (price) => {
@@ -36,12 +44,17 @@ const CartWrapList = () => {
   };
 
   const handleRemoveProduct = (product) => {
-    dispatch({
-      type: DELETE_PRODUCT,
-      payload: {
-        id: product.id,
-      },
-    });
+    let check = window.confirm(
+      "Bạn có chắc muốn xóa sản phẩm khỏi giỏ hàng không?"
+    );
+    if (check) {
+      dispatch({
+        type: DELETE_PRODUCT,
+        payload: {
+          id: product.id,
+        },
+      });
+    }
   };
 
   return (

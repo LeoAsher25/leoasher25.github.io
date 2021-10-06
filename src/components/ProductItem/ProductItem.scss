@@ -5,6 +5,17 @@
   transition: 0.3s;
   overflow: hidden;
 
+  * {
+    z-index: $product-item-zindex;
+  }
+  a {
+    text-decoration: none;
+    transition: color 0.3s;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
   &:hover {
     transform: translateY(-2px);
   }
@@ -14,7 +25,6 @@
 
   .content {
     font-size: 1.5rem;
-    // padding: 1rem 2rem;
 
     .desc {
       * {
@@ -98,7 +108,7 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
 
-          background-color: unset;
+          background-color: transparent;
         }
 
         transition: 0.5s;

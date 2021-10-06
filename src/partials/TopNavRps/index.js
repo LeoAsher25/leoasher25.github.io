@@ -71,7 +71,10 @@ const TopNavRps = (props) => {
   }
 
   return (
-    <div className="top-nav-rps d-lg-none">
+    <div
+      className="top-nav-rps d-lg-none"
+      style={{ backgroundColor: style.backgroundColor }}
+    >
       <div className="bar-btn" onClick={() => handleBarBtnClick()}>
         <div
           style={{ backgroundColor: style.color }}
@@ -91,7 +94,10 @@ const TopNavRps = (props) => {
         onClick={() => handleOverlayClick()}
       ></div>
 
-      <ul className="top-nav__list">
+      <ul
+        className="top-nav__list"
+        style={{ backgroundColor: style.backgroundColor }}
+      >
         <div className="top-nav-header">
           <div className="top-nav__branch">
             <img src="./img/logofull2.png" alt="" />

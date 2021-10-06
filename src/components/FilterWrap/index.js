@@ -20,14 +20,6 @@ const FilterWrap = (props) => {
 
   const handleCheckboxChecked = (e, index) => {
     if (index !== 0) {
-      // console.log(
-      //   "test check 23",
-      //   filterPrice.some((item, index) => {
-      //     if (index !== 0 && item.checked === true) console.log("ok", item);
-      //     return index !== 0 && item.checked === true;
-      //   })
-      // );
-      // console.log("test 1", filterPrice[index]);
       filterPrice[0].checked = false;
       filterPriceRef.current[0].checked = false;
     } else {

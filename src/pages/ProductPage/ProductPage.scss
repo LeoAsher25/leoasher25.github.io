@@ -1,16 +1,20 @@
 @import "../../scss/variable";
 
 .product-page {
-  .page-title {
-  }
+  .container {
+    position: relative;
 
-  .product-list {
-    .row {
-      .col-lg-3 {
-      }
-      // end of .col-lg-3
+    .page-title {
     }
-    // end of .row
+
+    .product-list {
+      .row {
+        .col-lg-3 {
+        }
+        // end of .col-lg-3
+      }
+      // end of .row
+    }
+    // end of .product-list
   }
-  // end of .product-list
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./TopNav.scss";
 import { CartContext } from "../../contexts/CartContextProvider";
+import { ProductContext } from "../../contexts/ProductContext";
 
 const TopNav = () => {
   // theme context
@@ -20,7 +21,7 @@ const TopNav = () => {
 
   //cart context
   const { cart } = useContext(CartContext);
-
+  const { handleSearch } = useContext(ProductContext);
   const { isAuthenticated, AuthDispatch } = useContext(AuthContext);
 
   // authFormOpen : consider whether authForm open or not
@@ -89,6 +90,14 @@ const TopNav = () => {
     });
   };
 
+  const searchInputRef = useRef(null);
+  const handleSearchOnSubmit = (e) => {
+    e.preventDefault();
+    const searchTerm = searchInputRef.current.value;
+
+    handleSearch(searchTerm);
+  };
+
   return (
     <div
       className="top-nav"
@@ -113,6 +122,10 @@ const TopNav = () => {
 
         <ul className="top-nav__list d-none d-lg-flex">
           <li className="top-nav-item">
+            <Link to="/">Home</Link>
+          </li>
+
+          <li className="top-nav-item">
             <Link to="/about">About</Link>
           </li>
 
@@ -123,7 +136,10 @@ const TopNav = () => {
             </Link>
             <ul
               className="top-nav-product-list"
-              style={{ boxShadow: `0px 0px 10px ${style.boxShadowColor}` }}
+              style={{
+                boxShadow: `0px 0px 10px ${style.boxShadowColor}`,
+                backgroundColor: style.backgroundColor,
+              }}
             >
               <li className="top-nav-product-item">
                 <Link to="/products">Mềm mại</Link>
@@ -132,6 +148,7 @@ const TopNav = () => {
                   className="product-sub-list"
                   style={{
                     boxShadow: `0px 0px 10px ${style.boxShadowColor}`,
+                    backgroundColor: style.backgroundColor,
                   }}
                 >
                   <li className="top-nav-product-item">
@@ -154,6 +171,7 @@ const TopNav = () => {
                   className="product-sub-list"
                   style={{
                     boxShadow: `0px 0px 10px ${style.boxShadowColor}`,
+                    backgroundColor: style.backgroundColor,
                   }}
                 >
                   <li className="top-nav-product-item">
@@ -205,22 +223,37 @@ const TopNav = () => {
           <div className="top-nav__search">
             <input type="checkbox" name="" id="search-checkbox" hidden />
             <label htmlFor="search-checkbox" className="nav-overlay "></label>
-            <label htmlFor="search-checkbox">
+            <label
+              htmlFor="search-checkbox"
+              onClick={(e) => {
+                searchInputRef.current.focus();
+              }}
+            >
               <i className="bi bi-search"></i>
               <i className="bi bi-x-lg"></i>
             </label>
             <form
               action=""
               className="search-form"
-              style={{ boxShadow: `0px 0px 10px ${style.boxShadowColor}` }}
+              style={{
+                boxShadow: `0px 0px 10px ${style.boxShadowColor}`,
+                backgroundColor: style.backgroundColor,
+              }}
+              onSubmit={(e) => {
+                handleSearchOnSubmit(e);
+              }}
             >
               <input
+                ref={searchInputRef}
                 type="text"
                 name="search"
                 id="search-input"
                 placeholder="Search"
               />
-              <button type="submit">
+              <button
+                type="submit"
+                style={{ backgroundColor: style.backgroundColor }}
+              >
                 <i className="bi bi-search"></i>
               </button>
             </form>
@@ -255,6 +288,7 @@ const TopNav = () => {
             >
               {!isAuthenticated ? (
                 <button
+                  style={{ backgroundColor: style.backgroundColor }}
                   className="user-item"
                   onClick={() => handleLoginClick()}
                 >
@@ -262,6 +296,7 @@ const TopNav = () => {
                 </button>
               ) : (
                 <button
+                  style={{ backgroundColor: style.backgroundColor }}
                   className="user-item"
                   onClick={() => handleLogoutClick()}
                 >

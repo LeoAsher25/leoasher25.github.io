@@ -5,6 +5,7 @@ import "./ProductItem.scss";
 
 import { CartContext } from "../../contexts/CartContextProvider";
 import { ADD_PRODUCT } from "../../reducers/types";
+import { Link } from "react-router-dom";
 
 const ProductItem = (props) => {
   const { product } = props;
@@ -60,6 +61,7 @@ const ProductItem = (props) => {
         product,
       },
     });
+    alert("Sản phẩm đã được thêm vào giỏ hàng!");
   }
 
   return (
@@ -67,19 +69,23 @@ const ProductItem = (props) => {
       className="product-item  mt-3 "
       style={{ boxShadow: `1px 1px 10px ${style.boxShadowColor}` }}
     >
-      <div
-        className="ava"
-        style={{
-          paddingTop: "100%",
-          backgroundImage: productUrlImg,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      ></div>
+      <Link to="/product-detail-page">
+        <div
+          className="ava"
+          style={{
+            paddingTop: "100%",
+            backgroundImage: productUrlImg,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        ></div>{" "}
+      </Link>
       <div className="content p-3 p-lg-4">
         <div className="desc">
-          <div className="title">{product.title}</div>
+          <Link to="/product-detail-page">
+            <span className="title">{product.title}</span>
+          </Link>
           <div className="price">{product.price}</div>
         </div>
         <div className="buy-cart-wrap">

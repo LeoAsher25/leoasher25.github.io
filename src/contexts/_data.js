@@ -7,10 +7,14 @@ export const productList = [
     quantity: 10,
     desciption:
       "Ngoài công dụng chính là chiếc đèn bảo vệ giấc ngủ của bạn mỗi tối, AmiCute còn có công dụng phụ là để decor phòng thêm lung linh hơn và giúp bạn giảm stress bằng cách đấm bóp thoải mái chiếc mây này nhen.",
-    size: ["15x12x10cm"],
+
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "size",
+      optionValue: ["15x12x10cm"],
+    },
   },
   {
     id: 2,
@@ -25,6 +29,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "size",
+      optionValue: ["35cm", "35cm", "55cm"],
+    },
   },
   {
     id: 3,
@@ -41,6 +49,10 @@ export const productList = [
       batteryCapacity: "1200mAh",
       desciption: `Có 4 mức sáng khác nhau và thay đổi được nhiều màu.`,
     },
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 4,
@@ -54,6 +66,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 5,
@@ -68,6 +84,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 6,
@@ -97,6 +117,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 8,
@@ -111,6 +135,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 9,
@@ -140,6 +168,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 11,
@@ -154,6 +186,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 12,
@@ -183,6 +219,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 14,
@@ -197,6 +237,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 15,
@@ -226,6 +270,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 17,
@@ -240,6 +288,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 18,
@@ -269,6 +321,10 @@ export const productList = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 20,
@@ -283,6 +339,10 @@ export const productList = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 21,
@@ -300,7 +360,6 @@ export const productList = [
       desciption: `Có 4 mức sáng khác nhau và thay đổi được nhiều màu.`,
     },
   },
-  
 ];
 
 export const _newestProducts = [
@@ -316,6 +375,10 @@ export const _newestProducts = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 2,
@@ -330,6 +393,10 @@ export const _newestProducts = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 3,
@@ -359,6 +426,10 @@ export const _newestProducts = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 5,
@@ -373,6 +444,10 @@ export const _newestProducts = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
 ];
 
@@ -389,6 +464,10 @@ export const _weeklyBests = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 2,
@@ -403,6 +482,10 @@ export const _weeklyBests = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 3,
@@ -432,6 +515,10 @@ export const _weeklyBests = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 5,
@@ -446,6 +533,10 @@ export const _weeklyBests = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 6,
@@ -475,6 +566,10 @@ export const _weeklyBests = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 8,
@@ -489,6 +584,10 @@ export const _weeklyBests = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 9,
@@ -518,6 +617,10 @@ export const _weeklyBests = [
     material:
       "Silicone mềm mại, kết cấu đàn hồi, không bị biến dạng, hạn chế bám bẩn",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 11,
@@ -532,6 +635,10 @@ export const _weeklyBests = [
     size: ["35cm", "35cm", "55cm"],
     material: "Nỉ và bông gòn cao cấp.",
     other: {},
+    option: {
+      optionName: "",
+      optionValue: [],
+    },
   },
   {
     id: 12,
@@ -585,14 +692,14 @@ export const _themeDatas = {
   lightTheme: {
     backgroundColor: "#fefefe",
     color: "black",
-    colorBlur: '#444',
+    colorBlur: "#444",
     boxShadowColor: "rgba(0, 0, 0, 0.2)",
     boxShadowColor1: "rgba(0, 0, 0, 0.3)",
   },
   darkTheme: {
     backgroundColor: "#222",
     color: "#eee",
-    colorBlur: '#bbb',
+    colorBlur: "#bbb",
     boxShadowColor: "rgba(0, 0, 0, 0.4)",
     boxShadowColor1: "rgba(0, 0, 0, 0.6)",
   },

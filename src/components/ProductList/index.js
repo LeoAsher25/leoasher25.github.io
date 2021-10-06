@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Col, Row } from "react-bootstrap";
 import { ProductContext } from "../../contexts/ProductContext";
@@ -6,7 +6,12 @@ import ProductItem from "../ProductItem";
 import "./ProductList.scss";
 
 const ProductList = (props) => {
-  const { products } = useContext(ProductContext);
+  const { processedProducts } = useContext(ProductContext);
+  const [_products, set_Products] = useState(processedProducts);
+
+  useEffect(() => {
+    console.log("list", processedProducts);
+  }, [processedProducts]);
 
   const { filterPrice, filterSort } = props;
 
@@ -17,14 +22,14 @@ const ProductList = (props) => {
 
     for (let filterPriceItem of filterPrice) {
       if (filterPriceItem.checked && filterPriceItem.value === "0-x") {
-        tmpProducts = [...products];
+        tmpProducts = [...processedProducts];
         isFilter = true;
         break;
       } else if (
         filterPriceItem.checked &&
         filterPriceItem.value === "1000000-x"
       ) {
-        products.forEach((product) => {
+        processedProducts.forEach((product) => {
           if (product.price >= parseInt(filterPriceItem.value)) {
             tmpProducts.push(product);
           }
@@ -35,7 +40,7 @@ const ProductList = (props) => {
       }
     }
     if (isFilter === false) {
-      products.forEach((product) => {
+      processedProducts.forEach((product) => {
         if (
           product.price >= parseInt(priceArr[0]) &&
           product.price < parseInt(priceArr[priceArr.length - 1])
@@ -96,7 +101,9 @@ const ProductList = (props) => {
     return (tmpProducts = [...tmpProducts]);
   };
 
-  const _products = getProductsAfterFilter();
+  useEffect(() => {
+    set_Products(getProductsAfterFilter);
+  }, [processedProducts, filterPrice, filterSort]);
 
   return (
     <div className="product-list">

@@ -66,21 +66,21 @@ const ProductPage = () => {
       value: "alphabet z-a",
       checked: false,
     },
-    {
-      title: "Cũ nhất",
-      value: "oldest",
-      checked: false,
-    },
-    {
-      title: "Mới nhất",
-      value: "newest",
-      checked: false,
-    },
-    {
-      title: "Bán chạy nhất",
-      value: "best-seller",
-      checked: false,
-    },
+    // {
+    //   title: "Cũ nhất",
+    //   value: "oldest",
+    //   checked: false,
+    // },
+    // {
+    //   title: "Mới nhất",
+    //   value: "newest",
+    //   checked: false,
+    // },
+    // {
+    //   title: "Bán chạy nhất",
+    //   value: "best-seller",
+    //   checked: false,
+    // },
   ]);
 
   return (

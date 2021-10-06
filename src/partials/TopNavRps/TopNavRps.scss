@@ -229,11 +229,13 @@
     }
 
     &.active {
-      & > a > .bi-plus-lg {
+      & > a > .bi-plus-lg,
+      .top-nav-item-link > .bi-plus-lg {
         display: none;
       }
 
-      & > a > .bi-dash-lg {
+      & > a > .bi-dash-lg,
+      .top-nav-item-link > .bi-dash-lg {
         display: inline-block;
       }
     }

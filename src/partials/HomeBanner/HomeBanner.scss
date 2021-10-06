@@ -72,27 +72,21 @@
     width: 100%;
     padding: 0 3rem;
     font-size: 2.2rem;
-    background-color: unset;
     display: flex;
     justify-content: space-between;
 
     button {
       outline: none;
-      transition: 0.8s;
+      transition: 0.3s;
       border-radius: 50%;
+      text-align: center;
 
       line-height: 4rem;
       width: 4rem;
       height: 4rem;
       opacity: 0;
 
-      i {
-        background-color: unset;
-      }
-
-      &:hover {
-        background-color: $primary-color2;
-      }
+      background-color: $primary-color2;
     }
 
     @media (max-width: 922px) {
